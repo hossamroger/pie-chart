@@ -1,0 +1,47 @@
+<html>
+
+  <head>
+      <title>JavaScript Pie Chart</title>
+      <script src="anychart-core.min.js"></script>
+      <script src="anychart-pie.min.js"></script>
+  </head>
+  <style>html, body, #container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }</style>
+  <body>
+    <div id="container" style="width: 100%; height: 100%"></div>
+    <script>
+        anychart.onDocumentReady(function() {
+        var data = [
+    {x: "White", value: 20 ,exploded: true},
+    {x: "Black or African American", value: 10},
+    {x: "American Indian and Alaska Native", value: 30},
+    {x: "Asian", value: 5},
+    {x: "Native Hawaiian and Other Pacific Islander", value: 50},
+    {x: "Some Other Race", value: 15},
+    {x: "Two or More Races", value: 20}
+    
+];
+
+// create the chart
+var chart = anychart.pie();
+
+// set the chart title
+chart.title("Population by Race for the United States: 2010 Census");
+
+// add the data
+chart.data(data);
+
+// display the chart in the container
+chart.container('container');
+chart.draw();
+
+});
+    </script>
+  </body>
+</html>
+
+
